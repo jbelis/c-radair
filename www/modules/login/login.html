@@ -1,21 +1,24 @@
 <ion-view>
 
-	<form ng-submit='submit()' class="login">
+	<div class="login-page">
 
-		<div class="input-left-inner-addon">
-			<i class="fa fa-envelope-o fa-fw"></i>
-			<input type="email" class="form-control input" ng-model='username' placeholder="Email" ng-focus="resetError()"/>
+		<div class="login-form">
+
+			<div class="input-left-inner-addon">
+				<i class="icon ion-email"></i>
+				<input type="email" class="form-control input" ng-model='username' placeholder="Email" ng-focus="resetError()"/>
+			</div>
+
+			<div class="input-left-inner-addon">
+				<i class="icon ion-key"></i>
+				<input class="form-control" ng-model='password' type="password" ng-focus="resetError()" placeholder="Mot de passe"/>
+			</div>
+			<p ng-class="{error:error}" ng-if="error">Identifiant ou mot de passe incorrect</p>
+
+			<button ng-click="submit()" class="btn btn-block btn-login" >Connexion</button>
+
 		</div>
 
-		<div class="input-left-inner-addon">
-			<i class="fa fa-key fa-fw"></i>
-			<input class="form-control" ng-model='password' type="password" ng-focus="resetError()"
-				   placeholder="Mot de passe" localize-attributes="placeholder"/>
-		</div>
-		<p ng-class="{error:error}" ng-if="error" localize>Identifiant ou mot de passe incorrect</p>
-
-		<button type="submit" class="btn btn-block btn-login"  localize>Connexion</button>
-
-	</form>
+	</div>
 
 </ion-view>

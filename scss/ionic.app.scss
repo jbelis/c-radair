@@ -18,6 +18,24 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+$color-lightgray: #f5f5f5;
+$color-silver: #DDDDDD;
+$color-gray: #AAAAAA;
+$color-darkgray: #7f8c8d;
+$color-black: #111111;
+$color-grey1: #575756;
+$color-grey2: #929598;
+$color-grey3: #BCBEC0;
+$color-nightblue: #262b40;
+$color-nightblue-light: rgba(38, 43, 64, 0.7);
+$color-neworange: #f75531;
+$color-bluegrey: rgb(243, 243, 246);
+$color-positive: #2BE390;
+$color-positive-light: rgba(43, 227, 114, 0.8);
+$color-negative: #E8706D;
+$color-negative-light: rgba(232, 112, 109, 0.8);
+$color-charcoal: rgb(52, 56, 61);
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
+@import "www/modules/login/login";
