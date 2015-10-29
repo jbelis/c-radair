@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var app = angular.module('starter', ['ionic']);
+  var app = angular.module('cradair', ['ionic']);
 
   app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -18,10 +18,26 @@
         "debug": true
       });
 
-      push.register(function (token) {
-        console.log("Device token:", token.token);
+      push.register(function(token) {
+        console.log("Device token:",token.token);
       });
 
     });
   });
+
+  app.config(function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider.state('login', {
+      url: '/login',
+      templateUrl: '/modules/login/login.html',
+      controller: 'LoginCtrl'
+    }).state('notificationsList', {
+      url: '/list',
+      templateUrl: '/modules/notifications-list/notifications-list.html',
+      controller: 'NotificationsListCtrl'
+    });
+
+    $urlRouterProvider.otherwise('/login');
+  });
+
 })();
