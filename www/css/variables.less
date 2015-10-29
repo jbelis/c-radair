@@ -1,0 +1,126 @@
+@color-orange: #da7529;
+@color-green: #2ECC40;
+@color-brown: #966847;
+@color-red: #FF4136;
+@color-lightgray: #f5f5f5;
+@color-silver: #DDDDDD;
+@color-gray: #AAAAAA;
+@color-darkgray: #7f8c8d;
+@color-black: #111111;
+@color-grey1: #575756;
+@color-grey2: #929598;
+@color-grey3: #BCBEC0;
+@color-nightblue: #262b40;
+@color-nightblue-light: rgba(38, 43, 64, 0.7);
+@color-neworange: #f75531;
+@color-lightblue: #4076c7;
+@color-redhover: #d13434;
+@color-bluegrey: rgb(243, 243, 246);
+@color-positive: #2BE390;
+@color-positive-light: rgba(43, 227, 114, 0.8);
+@color-negative: #E8706D;
+@color-negative-light: rgb(232, 112, 109, 0.8);
+@color-charcoal: rgb(52, 56, 61);
+@color-enterprise: #f75531;
+
+@histo-radius: 2px;
+@histo-background: #EAEAEA;
+
+// Custom Fonts
+@font-face {
+  font-family: 'BebasBold';
+  src: url('./src/assets/fonts/BebasNeue/BebasNeue-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('./src/assets/fonts/ProximaNova/ProximaNova-Light.otf');
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('./src/assets/fonts/ProximaNova/ProximaNova-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'ProximaCond';
+  src: url('./src/assets/fonts/ProximaNova/ProximaNovaCond-Semibold.otf');
+}
+
+// Orange button design
+.new-btn {
+  border: 0;
+  font-size: 14px;
+  background-color: @color-neworange;
+  padding: 6px 14px;
+  color: white;
+  box-shadow: -2px 2px 0 0 rgba(0, 0, 0, 0.3);
+  margin-top: -5px;
+  font-family: 'Proxima', arial, sans-serif;
+  outline: 0;
+  display: block;
+  &:hover {
+    background-color: @color-redhover;
+  }
+  &:active {
+    //btn pressed effect
+    margin-right: 2px;
+    margin-top: -3px;
+    margin-bottom: -2px;
+    box-shadow: none;
+  }
+}
+
+.box {
+  background: white;
+  padding: 1em;
+  border-radius: 2px;
+  overflow: auto;
+  margin: 0 0 1em 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  h1 {
+    @size: 2em;
+    font-size: @size;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    @size: 1.5em;
+    font-size: @size;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 0 -1/@size 1/@size;
+    padding: 0 1/@size;
+    border-bottom: 1px solid;
+    color: @color-orange;
+  }
+  h3 {
+    @size: 1.25em;
+    font-size: @size;
+    line-height: 1.25;
+    font-weight: normal;
+    margin: 0 -1/@size 1/@size;
+    padding: 0 1/@size;
+    border-bottom: 1px solid @color-orange;
+    color: @color-orange;
+  }
+  h1, h2, h3 {
+    a {
+      color: @color-grey1;
+      &:hover {
+        color: @color-orange;
+        font-weight: bold;
+        // background: linear-gradient(0deg, fade(@color-orange, 10%), fade(@color-orange, 0%));
+      }
+    }
+  }
+  hr {
+    border-top: 1px solid @color-silver;
+    border-bottom: none;
+  }
+}

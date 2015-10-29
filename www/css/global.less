@@ -1,0 +1,487 @@
+@import (reference) "css/variables.less";
+
+/* COMMON */
+
+html {
+    height:100%;
+    width: 100%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  font-family: 'Proxima', arial, serif;
+  position: relative;
+  background: @color-bluegrey;
+  &.waiting {
+    overflow: hidden;
+    div {
+      &#signIn, &#content {
+        display: none;
+      }
+      &#initializing-panel {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        background-color: white;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -32px;
+          margin-left: -32px;
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+  }
+  #initializing-panel {
+    display: none;
+  }
+  &.contentBody {
+    padding-top: 50px;
+  }
+  &.modal-open {
+    overflow: hidden !important;
+    .modal {
+      &.small .modal-dialog {
+        width: 400px;
+        max-width: calc(~"100% - 20px");
+        margin: 30px auto;
+      }
+      .modal-dialog {
+        cursor: initial;
+        .modal-content {
+          border-radius: 2px;
+          .modal-header {
+            font-weight: bold;
+            background-color: #eee;
+          }
+          .modal-body {
+            input:focus, textarea:focus {
+              outline-color: @color-neworange;
+              outline-width: 2px;
+              box-shadow: none;
+            }
+            .alert {
+              border-radius: 2px;
+              margin-bottom: 0;
+              padding: 10px
+            }
+          }
+          .modal-footer {
+            .btn-confirm {
+              .new-btn();
+              border-radius: 0;
+              float: right;
+              &:active {
+                margin-left: -2px;
+              }
+            }
+            .btn-cancel {
+              color: @color-gray;
+              padding-right: 10px;
+              vertical-align: middle;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+          button, button:focus, button:active {
+            outline-color: @color-neworange !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-fluid {
+  padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.row {
+    margin: 0px;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.btn-cradar {
+    color: #FFFFFF;
+    background-color: rgb(90, 167, 220);
+    border: 0px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+[ng-click],
+[full-click] {
+  cursor: pointer;
+}
+
+[tag-cloud] {
+  min-height: 200px;
+  position: relative;
+  canvas {
+  }
+}
+
+/* FOOTER */
+
+.search-footer {
+    text-align: center;
+}
+
+.popover {
+    /* override popover width */
+    max-width: 500px !important;
+}
+
+.page-header {
+    position: relative;
+    width: 50%;
+}
+
+/* Google places autocomplete ! DO NOT REMOVE  */
+.pac-container {
+    z-index: 1051 !important;
+}
+
+.clear{
+    clear: both;
+}
+
+label.error {
+    color: @color-red;
+    input {
+        outline: 1px solid @color-red;
+    }
+    a {
+        color: @color-red;
+        text-decoration: underline;
+    }
+}
+
+#cradar-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 30000;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+
+  img {
+    height: 96px;
+    width: 96px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -48px; /* -1 * image width / 2 */
+    margin-top: -48px; /* -1 * image height / 2 */
+    display: block;
+  }
+}
+
+.loading-smoke-screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.align-height-with-input {
+    line-height: 34px;
+}
+
+input[type=text].ng-invalid {
+    box-shadow: inset 0 0 1pt 1pt @color-red;
+}
+
+input[type=text].ng-invalid:focus {
+     border-color: @color-red;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.error {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+//pagination
+
+.pagination {
+  font-size: 1.2em;
+
+  li {
+
+    a {
+      color: @color-darkgray;
+      border: 1px solid @color-darkgray;
+    }
+    a:hover {
+      color: white;
+      background: @color-orange;
+    }
+  }
+
+  li:hover {
+    a {
+      border: 1px solid @color-darkgray;
+    }
+  }
+
+  .active {
+    a {
+      color: white;
+      background: @color-orange;
+      border: 1px solid @color-darkgray;
+    }
+    a:hover {
+      background: @color-orange;
+      cursor: pointer;
+      border: 1px solid @color-darkgray;
+    }
+  }
+  .disabled {
+    a {
+      border: 1px solid @color-darkgray;
+    }
+  }
+}
+
+.pages {
+    text-align: center;
+    .pagination {
+        li {
+            a {
+                color: @color-nightblue;
+                border-radius: 20px;
+                margin: 0 3px;
+                border-color: transparent;
+                font-size: 14pt;
+                font-weight: bold;
+                min-width: 40px;
+                &:hover {
+                    background-color: @color-lightblue;
+                    color: white;
+                }
+            }
+          &[ng-if='boundaryLinks'], &[ng-if='directionLinks'], &[ng-if='::boundaryLinks'], &[ng-if='::directionLinks'] {
+                a {
+                    color: @color-nightblue;
+                    background-color: transparent;
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+        .active {
+            a {
+                background-color: @color-lightblue;
+                color: white;
+            }
+        }
+        .disabled {
+            a:hover {
+                color: #777;
+            }
+        }
+        &.pagination-sm {
+
+        }
+    }
+}
+
+// Error pages 409/429/404
+
+.error-page {
+
+  .content {
+    margin-top: 50px;
+
+    .box {
+      padding-bottom: 30px;
+      .texte {
+
+        h2 {
+          padding-top: 40px;
+          margin-bottom: 40px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        .fa {
+          float: left;
+          margin-right: 20px;
+          margin-top: 20px;
+        }
+      }
+
+      .tag-cloud {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .texte a, .contact-us a {
+        color: @color-grey2;
+
+        &:hover {
+          font-weight: bold;
+          color: @color-orange;
+        }
+      }
+
+      .exemple-seg {
+        width: 100%;
+        border: 10px solid @color-grey1;
+      }
+    }
+
+    div.jqcloud {
+      @tagCloudColor: @color-grey1;
+      @step: 5%;
+
+      span.w0 {
+        color: fade(@tagCloudColor, 50% + (@step * 0));
+      }
+      span.w1 {
+        color: fade(@tagCloudColor, 50% + (@step * 1));
+      }
+      span.w2 {
+        color: fade(@tagCloudColor, 50% + (@step * 2));
+      }
+      span.w3 {
+        color: fade(@tagCloudColor, 50% + (@step * 3));
+      }
+      span.w4 {
+        color: fade(@tagCloudColor, 50% + (@step * 4));
+      }
+      span.w5 {
+        color: fade(@tagCloudColor, 50% + (@step * 5));
+      }
+      span.w6 {
+        color: fade(@tagCloudColor, 50% + (@step * 6));
+      }
+      span.w7 {
+        color: fade(@tagCloudColor, 50% + (@step * 7));
+      }
+      span.w8 {
+        color: fade(@tagCloudColor, 50% + (@step * 8));
+      }
+      span.w9 {
+        color: fade(@tagCloudColor, 50% + (@step * 9));
+      }
+      span.w10 {
+        color: fade(@tagCloudColor, 50% + (@step * 10));
+      }
+      a {
+        color: inherit;
+        &:hover {
+          color: darken(@tagCloudColor, 10%);
+        }
+      }
+    }
+  }
+}
+
+//Jqcloud override
+
+div.jqcloud {
+  @tagCloudColor: #DA7529;
+  @step: 5%;
+
+  span.w0 {
+    color: fade(@tagCloudColor, 50% + (@step * 0));
+  }
+  span.w1 {
+    color: fade(@tagCloudColor, 50% + (@step * 1));
+  }
+  span.w2 {
+    color: fade(@tagCloudColor, 50% + (@step * 2));
+  }
+  span.w3 {
+    color: fade(@tagCloudColor, 50% + (@step * 3));
+  }
+  span.w4 {
+    color: fade(@tagCloudColor, 50% + (@step * 4));
+  }
+  span.w5 {
+    color: fade(@tagCloudColor, 50% + (@step * 5));
+  }
+  span.w6 {
+    color: fade(@tagCloudColor, 50% + (@step * 6));
+  }
+  span.w7 {
+    color: fade(@tagCloudColor, 50% + (@step * 7));
+  }
+  span.w8 {
+    color: fade(@tagCloudColor, 50% + (@step * 8));
+  }
+  span.w9 {
+    color: fade(@tagCloudColor, 50% + (@step * 9));
+  }
+  span.w10 {
+    color: fade(@tagCloudColor, 50% + (@step * 10));
+  }
+  a {
+    color: inherit;
+    &:hover {
+      color: darken(@tagCloudColor, 10%);
+    }
+  }
+}
+
+//tooltip colors
+
+.tooltip {
+  &.in {
+    opacity: 1;
+  }
+  .tooltip-inner {
+    background-color: @color-nightblue;
+    border-radius: 2px;
+  }
+  &.right .tooltip-arrow {
+    border-right-color: @color-nightblue;
+  }
+  &.left .tooltip-arrow {
+    border-left-color: @color-nightblue;
+  }
+  &.bottom .tooltip-arrow {
+    border-bottom-color: @color-nightblue;
+  }
+  &.top .tooltip-arrow {
+    border-top-color: @color-nightblue;
+  }
+}
