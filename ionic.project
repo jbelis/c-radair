@@ -3,8 +3,8 @@
   "app_id": "2a73141e",
   "proxies": [
       {
-        "path": "/api",
-        "proxyUrl": "http://10.1.1.163:8080/api"
+        "path": "/api/",
+        "proxyUrl": "http://10.1.1.163:8080/api/"
       }
     ]
 }

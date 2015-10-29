@@ -9081,3 +9081,25 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.login-page {
+  min-height: 100%;
+  background: #f3f3f6; }
+  .login-page .login-form {
+    margin: auto;
+    width: 200px; }
+    .login-page .login-form .btn-login {
+      color: #575756;
+      background-color: #FF851B; }
+      .login-page .login-form .btn-login:hover {
+        background-color: #FF750B; }
+    .login-page .login-form .input-left-inner-addon {
+      margin-bottom: 10px; }
+      .login-page .login-form .input-left-inner-addon input {
+        padding-left: 45px;
+        border-radius: 5px; }
+      .login-page .login-form .input-left-inner-addon i {
+        color: #555;
+        position: absolute;
+        padding: 9px 14px;
+        pointer-events: none; }

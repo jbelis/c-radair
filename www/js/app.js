@@ -1,9 +1,9 @@
 (function () {
 	"use strict";
 
-	var app = angular.module('cradair', ['ionic']);
+	var app = angular.module('cradair', ['ionic', 'ionic.service.core', 'ionic.service.push']);
 
-	app.run(function ($ionicPlatform) {
+	app.run(function ($ionicPlatform, Push) {
 		$ionicPlatform.ready(function () {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 			// for form inputs)
