@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.cradar999638" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.cradar.air" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>c-radar</name>
   <description>
-        An Ionic Framework and Cordova project.
+        C-Radar Mobile
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="dev@data-publica.com" href="http://app.c-radar.com/">
+      Data Publica
     </author>
   <content src="index.html"/>
   <access origin="*"/>
