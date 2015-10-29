@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var app = angular.module('cradair', ['ionic']);
+  var app = angular.module('cradair');
 
   app.service('Push', function () {
     var registrationId;
