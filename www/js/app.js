@@ -43,23 +43,21 @@
 		$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 	});
 
-	app.constant('API_URL', 'http://10.1.1.163:8080/api');
-
 	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService) {
 
 		$scope.isUserLogged = false;
 
-		if (!AuthService.isUserDefined()) {
+		//if (!AuthService.isUserDefined()) {
 			AuthService.getUserInfo().then(function () {
 				$state.go("notificationsList");
 				$scope.isUserLogged = true;
 			}).catch(function (error) {
 				$state.go("login");
 			});
-		} else {
-			$state.go("notificationsList");
-			$scope.isUserLogged = true;
-		}
+		//} else {
+		//	$state.go("notificationsList");
+		//	$scope.isUserLogged = true;
+		//}
 
 		$scope.$state = $state;
 
