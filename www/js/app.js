@@ -34,10 +34,10 @@
     }).state('notificationsList', {
       url: '/list',
       templateUrl: '/modules/notifications-list/notifications-list.html',
-      controller: 'NotificationsListCtrl'
+      controller: 'NotificationsCtrl'
     });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/list');
   });
 
 })();
