@@ -9,7 +9,7 @@
 
 		$scope.submit = function () {
 
-			$http.get(API_URL + '/users/profile/verify-email/5487252de4b0a21bdd60ee2d').then( function(response) {
+			$http.get('/api/users/profile/verify-email/5487252de4b0a21bdd60ee2d').then( function(response) {
 				console.log(response.data);
 			});
 
