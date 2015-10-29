@@ -21,17 +21,20 @@
 
 	app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
-		$stateProvider.state('login', {
+		$stateProvider.state('main', {
+			url: "/",
+			controller: 'MainCtrl'
+		}).state('login', {
 			url: '/login',
-			templateUrl: '/modules/login/login.html',
-			controller: 'LoginCtrl'
+			templateUrl: "/modules/login/login.html",
+			controller: "LoginCtrl"
 		}).state('notificationsList', {
 			url: '/list',
 			templateUrl: '/modules/notifications-list/notifications-list.html',
 			controller: 'NotificationsCtrl'
 		});
 
-		$urlRouterProvider.otherwise('/list');
+		$urlRouterProvider.otherwise('/');
 
 		$httpProvider.defaults.useXDomain = true;
 		$httpProvider.defaults.withCredentials = true;
@@ -41,5 +44,25 @@
 	});
 
 	app.constant('API_URL', 'http://10.1.1.163:8080/api');
+
+	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService) {
+
+		$scope.isUserLogged = false;
+
+		if (!AuthService.isUserDefined()) {
+			AuthService.getUserInfo().then(function () {
+				$state.go("notificationsList");
+				$scope.isUserLogged = true;
+			}).catch(function (error) {
+				$state.go("login");
+			});
+		} else {
+			$state.go("notificationsList");
+			$scope.isUserLogged = true;
+		}
+
+		$scope.$state = $state;
+
+	});
 
 })();
