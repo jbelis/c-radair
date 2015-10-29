@@ -43,21 +43,18 @@
 		$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 	});
 
+	app.constant("API_URL", "http://localhost:5050");
+
 	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService) {
 
 		$scope.isUserLogged = false;
 
-		//if (!AuthService.isUserDefined()) {
-			AuthService.getUserInfo().then(function () {
-				$state.go("notificationsList");
-				$scope.isUserLogged = true;
-			}).catch(function (error) {
-				$state.go("login");
-			});
-		//} else {
-		//	$state.go("notificationsList");
-		//	$scope.isUserLogged = true;
-		//}
+		AuthService.getUserInfo().then(function () {
+			$state.go("notificationsList");
+			$scope.isUserLogged = true;
+		}).catch(function (error) {
+			$state.go("login");
+		});
 
 		$scope.$state = $state;
 
