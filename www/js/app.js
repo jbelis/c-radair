@@ -21,7 +21,7 @@
       push.register(function (token) {
         console.log("Device token:", token.token);
       });
-      
+
     });
   });
 })();
