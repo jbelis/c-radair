@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 
-	var app = angular.module('cradair', ['ionic']);
+	var app = angular.module('cradair', ['ionic', 'ionic.service.core', 'ionic.service.push']);
 
 	app.run(function ($ionicPlatform) {
 		$ionicPlatform.ready(function () {
