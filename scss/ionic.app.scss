@@ -40,3 +40,7 @@ $color-charcoal: rgb(52, 56, 61);
 @import "www/lib/ionic/scss/ionic";
 @import "www/modules/login/login";
 @import "www/modules/notifications-list/notifications-list";
+
+body {
+	font-family: 'Proxima', arial, serif;
+}
