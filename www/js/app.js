@@ -3,7 +3,7 @@
 
 	var app = angular.module('cradair', ['ionic', 'ionic.service.core', 'ionic.service.push']);
 
-	app.run(function ($ionicPlatform, Push) {
+	app.run(function ($ionicPlatform, Push, JBM) {
 		$ionicPlatform.ready(function () {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 			// for form inputs)
@@ -12,6 +12,12 @@
 			}
 			if (window.StatusBar) {
 				StatusBar.styleDefault();
+			}
+
+			if (!window.cordova) {
+				JBM.url = "http://localhost:5050";
+			} else {
+				JBM.url = "http://10.1.1.163:8080";
 			}
 
 			Push.init();
@@ -26,11 +32,11 @@
 			controller: 'MainCtrl'
 		}).state('login', {
 			url: '/login',
-			templateUrl: "/modules/login/login.html",
+			templateUrl: "modules/login/login.html",
 			controller: "LoginCtrl"
 		}).state('notificationsList', {
 			url: '/list',
-			templateUrl: '/modules/notifications-list/notifications-list.html',
+			templateUrl: 'modules/notifications-list/notifications-list.html',
 			controller: 'NotificationsCtrl'
 		});
 
@@ -43,11 +49,18 @@
 		$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 	});
 
-	app.constant('API_URL', 'http://localhost:5050/');
+//	app.constant("API_URL", ionic.Platform.isWebView() ? "http://10.1.1.163:8080" : "http://localhost:5050");
+	app.value("JBM", {
+		url: "http://10.1.1.163:8080"
+	});
 
-	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService) {
+	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService, JBM) {
 
 		$scope.isUserLogged = false;
+
+		if (!window.cordova) {
+			JBM.url = "http://localhost:5050";
+		}
 
 		AuthService.getUserInfo().then(function () {
 			$state.go("notificationsList");
