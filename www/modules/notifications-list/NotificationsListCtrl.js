@@ -5,11 +5,15 @@
 
 	var app = angular.module('cradair');
 
-	app.controller('NotificationsCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, $http, CompanyService, Push, JBM) {
+	app.controller('NotificationsCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, $http, $ionicScrollDelegate, CompanyService, Push, JBM) {
 
 		$timeout(function() {
 			$scope.registrationId = Push.getRegistrationId();
 		}, 1000);
+
+		$timeout(function() {
+			$scope.newNotifs = 5;
+		}, 5000);
 
 		$http.post(JBM.url + "/api/signals/search?q=+tags:(MONEY+OR+EVENT+OR+JOB+OR+PEOPLE+OR+NEWS+OR+PRODUCT)").then( function(response) {
 			$scope.signals = response.data.results;
@@ -17,27 +21,7 @@
 		});
 
 		$scope.selectPicture = function (companyId) {
-
-			//var pic;
-			//if (CompanyService.hasWebsite(company) && company.website.social) {
-			//	if (company.website.social.facebook && company.website.social.facebook.length) {
-			//		pic = CompanyService.getBestSocialPicture(company.website.social.facebook);
-			//		if (pic.length > 0) {
-			//			return pic;
-			//		}
-			//	}
-			//	if (company.website.social.twitter && company.website.social.twitter.length) {
-			//		pic = CompanyService.getBestSocialPicture(company.website.social.twitter);
-			//		if (pic.length > 0) {
-			//			return pic;
-			//		}
-			//	}
-			//}
-			//if (CompanyService.hasWebsite(company) && company.website.url) {
-			//	return "/api/fullcompanies/" + company.id + "/screenshot";
-			//}
 			return "img/default-company.png";
-
 		};
 
 		$scope.remove = function (notificationIdx) {
@@ -47,6 +31,11 @@
 		$scope.toggleLeft = function() {
 			$ionicSideMenuDelegate.toggleLeft();
 		};
+
+		$scope.viewNewNotifications = function() {
+			$scope.newNotifs = 0;
+			$ionicScrollDelegate.scrollTop(true);
+		}
 
 
 	});

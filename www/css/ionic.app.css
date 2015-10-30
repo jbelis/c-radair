@@ -9130,6 +9130,17 @@ a.button {
 
 .notifications-list-page {
   background: #f3f3f6; }
+  .notifications-list-page .new-notification {
+    position: absolute;
+    width: 200px;
+    left: calc(100% - 225px);
+    top: 10%;
+    background-color: #f75531;
+    opacity: .8;
+    text-align: center;
+    color: black;
+    padding: 15px;
+    border-radius: 15px; }
   .notifications-list-page .header-bar {
     background-color: #262b40; }
     .notifications-list-page .header-bar > span {
