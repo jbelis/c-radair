@@ -5,7 +5,7 @@
 
 	var app = angular.module('cradair');
 
-	app.controller('NotificationsCtrl', function ($scope, $timeout, Push, $http, JBM, CompanyService) {
+	app.controller('NotificationsCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, $http, CompanyService, Push, JBM) {
 
 		$timeout(function() {
 			$scope.registrationId = Push.getRegistrationId();
@@ -42,7 +42,11 @@
 
 		$scope.remove = function (notificationIdx) {
 			$scope.signals.splice(notificationIdx,1);
-		}
+		};
+
+		$scope.toggleLeft = function() {
+			$ionicSideMenuDelegate.toggleLeft();
+		};
 
 
 	});

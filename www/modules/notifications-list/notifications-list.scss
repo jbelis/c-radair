@@ -1,3 +1,20 @@
+.left-menu {
+	background-color: $color-nightblue-light;
+	color: $color-lightgray;
+	.item {
+		background-color: inherit;
+		color: inherit;
+	}
+	.menu-header {
+		background-color: $color-nightblue;
+		height: 45px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 10px;
+		font-size: 20px;
+	}
+}
+
 .notifications-list-page {
 
 	background: $color-bluegrey;
@@ -6,7 +23,7 @@
 		background-color: $color-nightblue;
 		> span {
 			margin: auto;
-			color: whitesmoke;
+			color: $color-lightgray;;
 		}
 	}
 
@@ -15,7 +32,7 @@
 			background-color: $color-nightblue-light;
 			.header-text {
 				vertical-align: middle;
-				color: whitesmoke;
+				color: $color-lightgray;;
 				display: inline-block;
 				margin-top : auto;
 				margin-bottom: auto;

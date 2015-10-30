@@ -9114,18 +9114,32 @@ a.button {
         padding: 9px 14px;
         pointer-events: none; }
 
+.left-menu {
+  background-color: rgba(38, 43, 64, 0.7);
+  color: #f5f5f5; }
+  .left-menu .item {
+    background-color: inherit;
+    color: inherit; }
+  .left-menu .menu-header {
+    background-color: #262b40;
+    height: 45px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px; }
+
 .notifications-list-page {
   background: #f3f3f6; }
   .notifications-list-page .header-bar {
     background-color: #262b40; }
     .notifications-list-page .header-bar > span {
       margin: auto;
-      color: whitesmoke; }
+      color: #f5f5f5; }
   .notifications-list-page .notification-card .card-header {
     background-color: rgba(38, 43, 64, 0.7); }
     .notifications-list-page .notification-card .card-header .header-text {
       vertical-align: middle;
-      color: whitesmoke;
+      color: #f5f5f5;
       display: inline-block;
       margin-top: auto;
       margin-bottom: auto; }
