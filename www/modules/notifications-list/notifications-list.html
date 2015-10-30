@@ -1,9 +1,34 @@
-<ion-view>
-  <ion-header-bar>
-      News C-radar
-  </ion-header-bar>
+<ion-view class="notifications-list-page">
 
-  <ion-content>
-    <div>Push registration ID : {{registrationId}}</div>
-  </ion-content>
+	<ion-header-bar class="header-bar">
+		<span>News C-radar</span>
+	</ion-header-bar>
+
+	<ion-content>
+
+		<!--<div>Push registration ID : {{registrationId}}</div>-->
+
+		<div class="card notification-card" ng-repeat="notification in signals" on-swipe-left="remove($index)" on-swipe-right="remove($index)">
+			<div class="item item-divider card-header">
+				<span class="header-text">
+					<span class="company-name">{{notification.indexedSignal.company.companyName}}</span>
+					<small>{{notification.indexedSignal.publicationDate | date}}</small>
+				</span>
+				<img class="header-source-image" ng-src="img/sources/communication-{{notification.indexedSignal.sourceType | lowercase}}.svg"/>
+			</div>
+			<div class="item item-text-wrap">
+				<div class="card-content-image">
+					<!--<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xat1/v/t1.0-1/c8.0.200.200/p200x200/10577108_724009971002685_3599294640889512372_n.png?oh=80913f0165488a2718b78303912f36d5&oe=563A1E85&__gda__=1446512751_f83b3c16011d9d40171745e4d3666c6a">-->
+					<img ng-src="{{selectPicture(notification.indexedSignal.company.companyId)}}" class="img-responsive" />
+				</div>
+				<div class="card-content-text">
+					<h2>{{notification.indexedSignal.title}}</h2>
+					{{notification.indexedSignal.content}}
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+
+
 </ion-view>

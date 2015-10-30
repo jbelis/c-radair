@@ -1,0 +1,47 @@
+.notifications-list-page {
+
+	.header-bar {
+		background-color: $color-nightblue;
+		> span {
+			margin: auto;
+			color: whitesmoke;
+		}
+	}
+
+	background: $color-bluegrey;
+
+	.notification-card {
+		.card-header {
+			background-color: $color-nightblue-light;
+			.header-text {
+				vertical-align: middle;
+				color: whitesmoke;
+				.company-name {
+					font-weight: bold;
+				}
+				margin-top : auto;
+				margin-bottom: auto;
+			}
+			.header-source-image {
+				width: 32px;
+				height: 32px;
+				float: right;
+				vertical-align: middle;
+			}
+		}
+		.card-content-image {
+			display: inline-block;
+			width: 25%;
+			vertical-align: middle;
+			img {
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.card-content-text {
+			display: inline-block;
+			width: 70%;
+			vertical-align: middle;
+		}
+	}
+}
