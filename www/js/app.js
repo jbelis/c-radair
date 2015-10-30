@@ -3,7 +3,7 @@
 
 	var app = angular.module('cradair', ['ionic', 'ionic.service.core', 'ionic.service.push']);
 
-	app.run(function ($ionicPlatform, Push, JBM) {
+	app.run(function ($ionicPlatform, Push, JBM, AuthService) {
 		$ionicPlatform.ready(function () {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 			// for form inputs)
@@ -20,8 +20,9 @@
 				JBM.url = "http://10.1.1.163:8080";
 			}
 
-			Push.init();
-
+			AuthService.init().then(function(result) {
+				console.log("Auth Service Initialized", result);
+			});
 		});
 	});
 
@@ -49,7 +50,6 @@
 		$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 	});
 
-//	app.constant("API_URL", ionic.Platform.isWebView() ? "http://10.1.1.163:8080" : "http://localhost:5050");
 	app.value("JBM", {
 		url: "http://10.1.1.163:8080"
 	});
@@ -58,15 +58,14 @@
 
 		$scope.isUserLogged = false;
 
-		if (!window.cordova) {
-			JBM.url = "http://localhost:5050";
-		}
-
-		AuthService.getUserInfo().then(function () {
-			$state.go("notificationsList");
-			$scope.isUserLogged = true;
-		}).catch(function (error) {
-			$state.go("login");
+		AuthService.waitInitialized().then(function(result) {
+			console.log("Auth Service Initialized fron controller", result);
+			AuthService.getUserInfo().then(function () {
+				$state.go("notificationsList");
+				$scope.isUserLogged = true;
+			}).catch(function(error) {
+				$state.go("login");
+			});
 		});
 
 		$scope.$state = $state;
