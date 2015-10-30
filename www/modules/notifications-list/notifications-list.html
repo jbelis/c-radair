@@ -14,7 +14,7 @@
 		</ion-content>
 	</ion-side-menu>
 
-	<ion-side-menu-content>
+	<ion-side-menu-content drag-content="false">
 
 		<ion-view class="notifications-list-page">
 
@@ -25,7 +25,7 @@
 
 			<ion-content>
 
-				<div class="card notification-card" ng-repeat="notification in signals" on-swipe-left="remove($index)" on-swipe-right="remove($index)">
+				<div class="card notification-card" ng-repeat="notification in signals | limitTo:10" on-swipe-left="remove($index)" on-swipe-right="remove($index)">
 					<div class="item item-divider card-header">
 				<span class="header-text">
 					<span class="company-name">{{notification.indexedSignal.company.companyName}}</span> <br/>
