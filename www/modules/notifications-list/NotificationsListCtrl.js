@@ -12,23 +12,22 @@
 		}, 1000);
 
 		Push.addListener(function(notification) {
-			alert("notification received: " + JSON.stringify(notification));
 			$scope.newNotifs++;
 			$scope.signals.unshift({
 				indexedSignal: {
 					company: {
 						companyId: "FR-813159803",
-						companyName: "AU VIEUX COMTOIS",
+						companyName: "FAKE COMPANY",
 						companyTags: []
 					},
 					content: notification,
-					id: "TWITTER:lecomtoiscom:660084883809656832:FR-813159803",
+					id: "TWITTER:test:660084883809656832:FR-813159803",
 					indexationDate: new Date().getTime(),
 					publicationDate: new Date().getTime(),
-					signalId: "TWITTER:lecomtoiscom:660084883809656832",
-					sourceId: "TWITTER:lecomtoiscom",
+					signalId: "TWITTER:test:660084883809656832",
+					sourceId: "TWITTER:tes",
 					sourceType: "TWITTER",
-					tags: Array[1],
+					tags: [],
 					title: null,
 					url: "http://twitter.com/LeComtoisCom/status/660084883809656832"
 				}
