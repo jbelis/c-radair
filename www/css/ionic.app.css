@@ -9103,3 +9103,25 @@ a.button {
         position: absolute;
         padding: 9px 14px;
         pointer-events: none; }
+
+.notifications-list-page .notification-card .card-header .header-text {
+  vertical-align: middle; }
+
+.notifications-list-page .notification-card .card-header .header-source-image {
+  width: 32px;
+  height: 32px;
+  float: right;
+  vertical-align: middle; }
+
+.notifications-list-page .notification-card .card-content-image {
+  display: inline-block;
+  width: 25%;
+  vertical-align: middle; }
+  .notifications-list-page .notification-card .card-content-image img {
+    width: 100px;
+    height: 100px; }
+
+.notifications-list-page .notification-card .card-content-text {
+  display: inline-block;
+  width: 70%;
+  vertical-align: middle; }
