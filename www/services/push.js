@@ -3,7 +3,7 @@
 
 	var app = angular.module('cradair');
 
-	app.service('Push', function ($ionicPush, JBM) {
+	app.service('Push', function ($ionicPush, $http, JBM) {
 		var registrationId;
 
 		return {
@@ -12,6 +12,7 @@
 					debug: true,
 					onNotification: function (notification) {
 						var payload = notification.payload;
+						alert(payload);
 						console.log("Notification received", notification, payload);
 					},
 					"onRegister": function (data) {
@@ -20,6 +21,8 @@
 						// tell the server
 						$http.put(JBM.url + "/api/users/profile/mobile/" + data.token).then(function() {
 							console.log("Device token given to server");
+						}).catch(function(error) {
+							alert(JSON.stringify(error));
 						});
 
 					},
