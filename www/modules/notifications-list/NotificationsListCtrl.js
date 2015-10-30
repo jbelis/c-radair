@@ -7,6 +7,9 @@
 
 	app.controller('NotificationsCtrl', function ($scope, $timeout, $ionicSideMenuDelegate, $http, $ionicScrollDelegate, CompanyService, Push, JBM) {
 
+		$scope.newNotifs = 0;
+		$scope.signals = [];
+
 		$timeout(function() {
 			$scope.registrationId = Push.getRegistrationId();
 		}, 1000);
@@ -25,13 +28,14 @@
 					indexationDate: new Date().getTime(),
 					publicationDate: new Date().getTime(),
 					signalId: "TWITTER:test:660084883809656832",
-					sourceId: "TWITTER:tes",
+					sourceId: "TWITTER:test",
 					sourceType: "TWITTER",
 					tags: [],
 					title: null,
 					url: "http://twitter.com/LeComtoisCom/status/660084883809656832"
 				}
 			});
+			$scope.$apply();
 		});
 
 		$http.post(JBM.url + "/api/signals/search?q=+tags:(MONEY+OR+EVENT+OR+JOB+OR+PEOPLE+OR+NEWS+OR+PRODUCT)").then( function(response) {
