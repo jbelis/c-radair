@@ -19,6 +19,19 @@
 
 	background: $color-bluegrey;
 
+	.new-notification {
+		position: absolute;
+		width: 200px;
+		left: calc(100% - 225px);
+		top: 10%;
+		background-color: $color-neworange;
+		opacity: .8;
+		text-align: center;
+		color: black;
+		padding: 15px;
+		border-radius: 15px;
+	}
+
 	.header-bar {
 		background-color: $color-nightblue;
 		> span {
