@@ -9091,9 +9091,8 @@ a.button {
       margin: auto;
       color: whitesmoke; }
   .login-page .login-form {
-    margin: auto;
-    width: 215px;
-    margin-top: 75px; }
+    margin: 75px auto auto auto;
+    max-width: 215px; }
     .login-page .login-form .btn-login {
       color: #f5f5f5;
       background-color: #FF851B;
@@ -9127,6 +9126,7 @@ a.button {
     .notifications-list-page .notification-card .card-header .header-text {
       vertical-align: middle;
       color: whitesmoke;
+      display: inline-block;
       margin-top: auto;
       margin-bottom: auto; }
       .notifications-list-page .notification-card .card-header .header-text .company-name {
@@ -9141,8 +9141,8 @@ a.button {
     width: 25%;
     vertical-align: middle; }
     .notifications-list-page .notification-card .card-content-image img {
-      width: 100px;
-      height: 100px; }
+      width: 90%;
+      height: auto; }
   .notifications-list-page .notification-card .card-content-text {
     display: inline-block;
     width: 70%;

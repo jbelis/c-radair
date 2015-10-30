@@ -12,9 +12,8 @@
 	}
 
 	.login-form {
-		margin: auto;
-		width: 215px;
-		margin-top: 75px;
+		margin: 75px auto auto auto;
+		max-width: 215px;
 		.btn-login {
 			color: $color-lightgray;
 			background-color: #FF851B;

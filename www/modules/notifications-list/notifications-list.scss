@@ -1,5 +1,7 @@
 .notifications-list-page {
 
+	background: $color-bluegrey;
+
 	.header-bar {
 		background-color: $color-nightblue;
 		> span {
@@ -8,19 +10,18 @@
 		}
 	}
 
-	background: $color-bluegrey;
-
 	.notification-card {
 		.card-header {
 			background-color: $color-nightblue-light;
 			.header-text {
 				vertical-align: middle;
 				color: whitesmoke;
+				display: inline-block;
+				margin-top : auto;
+				margin-bottom: auto;
 				.company-name {
 					font-weight: bold;
 				}
-				margin-top : auto;
-				margin-bottom: auto;
 			}
 			.header-source-image {
 				width: 32px;
@@ -34,8 +35,8 @@
 			width: 25%;
 			vertical-align: middle;
 			img {
-				width: 100px;
-				height: 100px;
+				width: 90%;
+				height: auto;
 			}
 		}
 		.card-content-text {

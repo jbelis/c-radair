@@ -11,7 +11,7 @@
 		<div class="card notification-card" ng-repeat="notification in signals" on-swipe-left="remove($index)" on-swipe-right="remove($index)">
 			<div class="item item-divider card-header">
 				<span class="header-text">
-					<span class="company-name">{{notification.indexedSignal.company.companyName}}</span>
+					<span class="company-name">{{notification.indexedSignal.company.companyName}}</span> <br/>
 					<small>{{notification.indexedSignal.publicationDate | date}}</small>
 				</span>
 				<img class="header-source-image" ng-src="img/sources/communication-{{notification.indexedSignal.sourceType | lowercase}}.svg"/>
