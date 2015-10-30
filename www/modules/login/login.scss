@@ -3,12 +3,26 @@
 	min-height: 100%;
 	background: $color-bluegrey;
 
+	.header-bar {
+		background-color: $color-nightblue;
+		> span {
+			margin: auto;
+			color: whitesmoke;
+		}
+	}
+
 	.login-form {
 		margin: auto;
-		width: 200px;
+		width: 215px;
+		margin-top: 75px;
 		.btn-login {
-			color: $color-grey1;
+			color: $color-lightgray;
 			background-color: #FF851B;
+			padding: 6px 12px;
+			line-height: 1.42857143;
+			width: 100%;
+			border: none;
+			border-radius: 5px;
 			&:hover {
 				background-color: #FF750B;
 			}
