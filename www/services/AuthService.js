@@ -51,7 +51,6 @@
 				data: "j_username=" + username + "&j_password=" + password + "&spring_security_remember_me=1",
 				ignoreAuthModule: true
 			}).then(function() {
-				alert("login successful");
 				Store.set("username", username);
 				Store.set("password", password);
 				return true;
@@ -92,7 +91,7 @@
 								if (error.status === 401) {
 									Store.remove("password");
 								} else {
-									alert(JSON.stringify(error));
+									//alert(JSON.stringify(error));
 								}
 								initializedPromise.resolve(false);
 								return false;
@@ -104,7 +103,7 @@
 					}
 				} else {
 					initializedPromise.resolve(false);
-					alert(JSON.stringify(error));
+					//alert(JSON.stringify(error));
 					return false;
 				}
 			});
