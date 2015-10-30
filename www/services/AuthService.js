@@ -9,7 +9,7 @@
 
         function getUserInfo() {
             if (!userInfoPromise) {
-                userInfoPromise = $http.get(API_URL + "/api/users/current/userInfo?timestamp=" + new Date().getTime())
+                userInfoPromise = $http.get(API_URL + "api/users/current/userInfo?timestamp=" + new Date().getTime())
 					.then(function (response) {
                     user = response.data;
                     return user;

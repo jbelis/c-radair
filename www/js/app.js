@@ -43,7 +43,7 @@
 		$httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 	});
 
-	app.constant("API_URL", "http://localhost:5050");
+	app.constant('API_URL', 'http://localhost:5050/');
 
 	app.controller('MainCtrl', function ($scope, $state, $timeout, $window, AuthService) {
 
